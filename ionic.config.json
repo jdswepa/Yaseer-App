@@ -1,0 +1,7 @@
+{
+  "name": "Yaseer paret",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

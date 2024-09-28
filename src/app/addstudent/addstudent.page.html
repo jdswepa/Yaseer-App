@@ -1,0 +1,114 @@
+<ion-content [fullscreen]="true">
+  <div class="custom-header">
+    <ion-back-button text="" defaultHref="/newaccount"></ion-back-button>
+    <img class="round-image" src="assets/userPic.png" alt="User Profile Picture">
+    <ion-title class="header-title">إضافة طالب</ion-title>
+  </div>
+
+  <ion-card dir="rtl">
+    <ion-card-content>
+
+      <!-- Username Input -->
+      <ion-item>
+        <ion-label class="names" position="stacked">اسم الطالب<span class="required-star">*</span></ion-label>
+        <ion-input
+          type="text"
+          [(ngModel)]="studentname"
+          name="studentname"
+          #usernameField="ngModel"
+          placeholder="أدخل اسم الطالب"
+          required
+          (ionBlur)="validateStudentname()"
+        ></ion-input>
+        <ion-note *ngIf="studentnameError" color="danger">
+          <small>اسم الطالب يجب أن يحتوي على أحرف فقط</small>
+        </ion-note>
+      </ion-item>
+
+      <!-- ID Number Input -->
+      <ion-item>
+        <ion-label class="names" position="stacked">رقم الهوية<span class="required-star">*</span></ion-label>
+        <ion-input
+          type="text"
+          [(ngModel)]="idNumber"
+          name="idNumber"
+          #idNumberField="ngModel"
+          placeholder="أدخل رقم الهوية"
+          required
+          (ionBlur)="validateIdNumber()"
+        ></ion-input>
+        <ion-note *ngIf="idNumberError" color="danger">
+          <small>رقم الهوية يجب أن يتكون من 10 أرقام على الأقل ويكون رقمي فقط</small>
+        </ion-note>
+      </ion-item>
+
+      <!-- Birth Date Input -->
+      <ion-item>
+        <ion-label class="names" position="stacked">تاريخ الميلاد <span class="required-star">*</span></ion-label>
+        <ion-datetime presentation="date" [preferWheel]="true" [(ngModel)]="birthDate" required></ion-datetime>
+      </ion-item>
+
+      <!-- Class Input -->
+      <ion-item>
+        <ion-label class="names" position="stacked">الصف<span class="required-star">*</span></ion-label>
+        <ion-input type="text" [(ngModel)]="studentClass" placeholder="أدخل الصف" required></ion-input>
+      </ion-item>
+
+      <!-- Address Input -->
+      <ion-item>
+        <ion-label class="names" position="stacked">العنوان <span class="required-star">*</span></ion-label>
+        <ion-input type="text" [(ngModel)]="address" placeholder="أدخل العنوان" required></ion-input>
+      </ion-item>
+
+      <!-- Gender Selection (Radio Buttons) -->
+      <ion-item dir="rtl">
+        <ion-label class="names" position="stacked">الجنس <span class="required-star">*</span></ion-label>
+        <ion-radio-group [(ngModel)]="gender" required>
+            <ion-radio slot="start" value="male" aria-label="Male option">ذكر</ion-radio>
+            <ion-radio slot="start" value="female" aria-label="Female option">أنثى</ion-radio>
+        </ion-radio-group>
+      </ion-item>
+
+      <!-- Subscription Type (Toggle Buttons) -->
+      <ion-label class="names" position="stacked">نوع الاشتراك <span class="required-star">*</span></ion-label>
+      <ion-segment [(ngModel)]="subscriptionType" required>
+        <ion-segment-button value="both">
+          <ion-label> ذهاب و اياب</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="morningRide">
+          <ion-label>ذهاب فقط</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="noonRide">
+          <ion-label> اياب فقط</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <!-- Profile Image Upload -->
+      <div class="profile-img-container">
+        <ion-label class="names" position="stacked">صورة الطالب <span class="required-star">*</span></ion-label>
+             <!-- Image Preview -->
+          <div *ngIf="imagePreview" class="image-preview">
+         <img [src]="imagePreview" alt="Uploaded Image" class="uploaded-image" />
+         <p>تم تحميل الصورة بنجاح!</p>
+           <!-- Delete Button -->
+    <ion-button color="danger" (click)="removeImage()">
+      حذف الصورة
+    </ion-button>
+        </div>
+        <ion-button fill="clear" class="add-photo-button" (click)="chooseImage()">
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+      
+      </div>
+  
+  
+  
+ 
+
+
+      <!-- Submit Button -->
+      <ion-button expand="block" [disabled]="!isFormValid()" (click)="goToAddStudent()">تسجيل</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

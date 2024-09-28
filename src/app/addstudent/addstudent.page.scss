@@ -1,0 +1,181 @@
+/* Style the entire ion-content to center the card and logo */
+ion-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Optional: change background color */
+    height: 100%; /* Ensure this is set correctly */
+    padding: 16px;
+    --background: #ffffff; /* Set default background */
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+
+/* Custom header styles */
+.custom-header {
+    background-color: white; /* Set header background to white */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Adjust padding as needed */
+    position: relative; /* Allows absolute positioning for back button */
+    width: 100%; /* Ensure it spans full width */
+}
+
+/* Back button styles */
+ion-back-button {
+    position: absolute; /* Positioning the back button */
+    top: 10px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    color: #F8C71E; /* Color of the back button */
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
+/* Round image styles */
+.round-image {
+    width: 80px; /* Size adjustments */
+    height: 80px; 
+    border-radius: 50%; /* Make image round */
+    object-fit: cover; 
+    margin-top: 15%;
+}
+
+/* Header title styles */
+.header-title {
+    color: #F8C71E; /* Title color */
+    font-size: 220%; /* Title size */
+    margin-left: 20%; /* Adjust space between image and title */
+    margin-top: 8%; /* Maintain top margin */
+}
+
+/* Card styling */
+ion-card {
+    width: 100%;
+    max-width: 330px; /* Fit better on mobile */
+    padding: 16px;
+    --background: #ffffff;
+    margin: auto; /* Center the card */
+}
+
+/* Input field styles */
+ion-item {
+    margin-bottom: 22px; /* Spacing adjustments */
+    --background: #ffffff; 
+    color: #000000; /* Font color */
+    font-weight: bold; /* Bold font */
+    font-size:100% ;
+}
+.names{
+    color: #000000; /* Font color */
+    font-weight: bold; /* Bold font */
+    font-size:100% ;
+}
+ion-datetime {
+    --background: rgb(255, 255, 255);
+    --background-rgb: 255, 255, 255;
+    --wheel-highlight-background: #fcde73;
+    --wheel-highlight-border-radius: 48px;
+    --wheel-fade-background-rgb:255, 255, 255;
+}
+
+ion-datetime::part(wheel-item) {
+    color: rgb(0, 0, 0); /* Text color black */
+    font-size: 0.8em; /* Make wheel items smaller */
+}
+
+ion-datetime::part(wheel-item active) {
+    color: rgb(0, 0, 0); /* Keep active text color black */
+    font-size: 0.8em; /* Make active wheel items smaller */
+}
+
+
+
+/* Additional styling for the card to ensure proper layout */
+ion-card {
+    padding: 16px; /* Add padding if needed */
+    max-width: 100%; /* Ensure it fits the card */
+}
+
+ion-radio-group {
+    display: flex;
+    flex-direction: column; /* Stack the radio buttons vertically */
+}
+
+
+ion-radio {
+    --border-radius: 4px;
+    --inner-border-radius: 4px;
+    margin-left: auto; /* Aligns radio buttons to the start in RTL */
+    margin-right: 0; /* Ensure no margin on the right */
+    --color: #ddd;
+    --color-checked: #0a0a0a;
+  }
+  
+  ion-radio.ios::part(container) {
+    width: 20px;
+    height: 20px;
+  
+    border: 2px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .radio-checked.ios::part(container) {
+    border-color: #F8C71E;
+  }
+
+/* Submit button styles */
+ion-button {
+    --background: #F8C71E; /* Button color */
+    --border-radius: 30px; /* Button shape */
+    margin-top: 16px; /* Spacing */
+    width: 100%; /* Full width */
+    max-width: 330px; /* Match card width */
+    font-weight: bold; /* Button font */
+}
+
+/* Ion segment styles */
+ion-segment-button::part(indicator-background) {
+    background: #F8C71E;
+  }
+  
+  /* Material Design styles */
+  ion-segment-button.md::part(native) {
+    color: #000;
+  }
+  
+  .segment-button-checked.md::part(native) {
+    color:  #fcde73;
+  }
+  
+  ion-segment-button.md::part(indicator-background) {
+    height: 4px;
+  }
+  
+  /* iOS styles */
+  ion-segment-button.ios::part(native) {
+    color: #070707;
+    font-size: large;
+  }
+  
+
+  
+  ion-segment-button.ios::part(indicator-background) {
+    border-radius: 40px;
+  }
+
+
+.required-star {
+    color: red; /* Color for required fields */
+}
+
+.image-preview {
+    margin-top: 10px;
+    text-align: center; /* Center the image and text */
+  }
+  
+  .uploaded-image {
+    max-width: 100px; /* Adjust the size as needed */
+    max-height: 100px; /* Adjust the size as needed */
+    border-radius: 8px; /* Optional: round corners */
+    margin-top: 10px; /* Add some space above the image */
+  }
